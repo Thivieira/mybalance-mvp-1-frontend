@@ -66,7 +66,7 @@ async function handleAddTransaction(event) {
     data.category_id = data.category !== "" ? data.category : null;
     delete data.category;
     data.amount = parseFloat(data.amount);
-    data.date = dayjs(data.date).format("YYYY-MM-DD");
+    data.date = dayjs(data.date, "DD/MM/YYYY").format("YYYY-MM-DD");
 
     const response = await fetch(`${API_BASE_URL}/transaction`, {
       method: "POST",

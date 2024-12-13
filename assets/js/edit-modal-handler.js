@@ -127,7 +127,8 @@ async function handleEditFormSubmit(event) {
       data.category_id = data.category !== "" ? data.category : null;
       delete data.category;
       data.amount = parseFloat(data.amount);
-      data.date = dayjs(data.date).format("YYYY-MM-DD");
+
+      data.date = dayjs(data.date, "DD/MM/YYYY").format("YYYY-MM-DD");
     }
 
     const endpoint = isTransaction

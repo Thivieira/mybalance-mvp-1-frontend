@@ -16,14 +16,14 @@ function initializeBalanceChart() {
     yaxis: {
       labels: {
         formatter: function (value) {
-          return `R$ ${value.toFixed(2)}`;
+          return formatCurrency(value);
         },
       },
     },
     tooltip: {
       y: {
         formatter: function (value) {
-          return `R$ ${value.toFixed(2)}`;
+          return formatCurrency(value);
         },
       },
     },

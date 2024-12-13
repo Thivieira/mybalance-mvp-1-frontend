@@ -30,15 +30,15 @@ async function renderBalance(balanceData) {
     const currentBalance = await window.balanceService.getCurrentBalance();
 
     // Update UI elements
-    document.getElementById("totalIncome").innerHTML = `R$ ${Number(
+    document.getElementById("totalIncome").innerHTML = formatCurrency(
       currentBalance.income
-    ).toFixed(2)}`;
-    document.getElementById("totalExpenses").innerHTML = `R$ ${Number(
+    );
+    document.getElementById("totalExpenses").innerHTML = formatCurrency(
       currentBalance.expense
-    ).toFixed(2)}`;
-    document.getElementById("balance").innerHTML = `R$ ${Number(
+    );
+    document.getElementById("balance").innerHTML = formatCurrency(
       currentBalance.balance
-    ).toFixed(2)}`;
+    );
 
     // Update balance status indicator
     const balanceElement = document.getElementById("balance");
@@ -99,7 +99,7 @@ function renderTransactions(transactionsData) {
     var amountCell = row.insertCell(1);
     amountCell.className =
       "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4";
-    amountCell.innerHTML = `R$ ${transaction.amount}`;
+    amountCell.innerHTML = formatCurrency(transaction.amount);
 
     var categoryCell = row.insertCell(2);
     categoryCell.className =

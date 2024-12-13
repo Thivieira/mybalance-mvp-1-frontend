@@ -26,6 +26,10 @@ function handleDelete({ type, id, onSuccess }) {
             "success"
           );
 
+          if (type === "category") {
+            refreshAllCategorySelects();
+          }
+
           if (onSuccess) onSuccess();
         })
         .catch((error) => {
@@ -39,6 +43,17 @@ function handleDelete({ type, id, onSuccess }) {
     }
   });
 }
+
+function refreshAllCategorySelects() {
+  loadCategoriesForSelect();
+
+  const editModal = document.getElementById("editTransactionModal");
+  if (editModal) {
+    loadCategoriesForEditSelect(editModal);
+  }
+}
+
+window.refreshAllCategorySelects = refreshAllCategorySelects;
 
 // Add click handlers for delete buttons
 document.addEventListener("click", function (e) {

@@ -148,6 +148,9 @@ async function handleAddCategory(event) {
     form.reset();
     closeModal(form.closest(".modal-content"));
 
+    // Refresh category selects after adding new category
+    window.refreshAllCategorySelects();
+
     // Refresh data
     window.loadInitialData();
   } catch (error) {

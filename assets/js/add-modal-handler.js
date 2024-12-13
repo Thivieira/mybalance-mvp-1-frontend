@@ -63,11 +63,11 @@ async function handleAddTransaction(event) {
     let data = Object.fromEntries(formData.entries());
 
     // Ensure amount is a number
-    data.category_id = data.category;
+    data.category_id = data.category !== "" ? data.category : null;
     delete data.category;
     data.amount = parseFloat(data.amount);
     data.date = dayjs(data.date).format("YYYY-MM-DD");
-    console.log(data);
+
     const response = await fetch(`${API_BASE_URL}/transaction`, {
       method: "POST",
       headers: {

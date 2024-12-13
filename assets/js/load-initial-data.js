@@ -104,7 +104,9 @@ function renderTransactions(transactionsData) {
     var categoryCell = row.insertCell(2);
     categoryCell.className =
       "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4";
-    categoryCell.innerHTML = transaction.category.name;
+    categoryCell.innerHTML = transaction.category
+      ? transaction.category.name
+      : "Sem categoria";
 
     var dateCell = row.insertCell(3);
     dateCell.className =

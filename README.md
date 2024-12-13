@@ -21,7 +21,7 @@ MyBalance é uma aplicação web desenvolvida para ajudar os usuários a gerenci
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu_usuario/mybalance.git
+   git clone https://github.com/Thivieira/mybalance-mvp-1-frontend.git
    ```
 
 2. Navegue até o diretório do projeto:

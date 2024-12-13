@@ -37,12 +37,6 @@
             fontFamily: {
               sans: ["Roboto", "sans-serif"],
             },
-            // screens: {
-            //   sm: { max: "639px" },
-            //   md: { max: "767px" },
-            //   lg: { max: "1023px" },
-            //   xl: { max: "1279px" },
-            // },
           },
         },
       };
@@ -52,208 +46,968 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="bg-gray-100">
-    <header
-      class="md:fixed md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300"
+
+  <body class="text-blueGray-700 antialiased">
+    <aside
+      class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
     >
-      <div class="w-full md:w-56 flex flex-row items-center">
-        <img src="assets/logo.png" class="w-7 rounded-full" />
-        <strong class="font-bold ml-2 flex-1 text-primary tracking-wider"
-          >MyBalance</strong
+      <div
+        class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
+      >
+        <!-- Brand -->
+        <button
+          class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+          type="button"
         >
-        <button id="sliderBtn" class="text-right text-gray-900 hidden md:block">
-          <i class="fas fa-list-ul"></i>
+          <i class="fas fa-bars"></i>
         </button>
+        <a
+          href="#"
+          class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+        >
+          MyBalance
+        </a>
+
+        <!-- Navigation -->
+        <div
+          class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
+        >
+          <!-- Navigation Items -->
+          <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+            <li class="items-center">
+              <a
+                href="#"
+                class="text-xs uppercase py-3 font-bold block text-primary hover:text-primary-dark"
+              >
+                <i class="fas fa-home mr-2 text-sm"></i>
+                Início
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <button id="navbarToggle" class="hidden md:block md:fixed right-0 mr-6">
-        <i class="fas fa-chevron-double-down"></i>
-      </button>
-      <nav
-        id="navbar"
-        class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center"
+    </aside>
+    <main class="relative md:ml-64 bg-blueGray-100">
+      <header
+        class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
       >
         <div
-          class="text-gray-600 md:w-full md:flex md:flex-row md:justify-evenly md:pb-10 md:mb-10 md:border-b md:border-gray-200"
+          class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
         >
           <a
-            class="mr-2 transition duration-500 ease-in-out hover:text-gray-900"
-            href="#"
-            title="email"
-            ><i class="fas fa-envelope-open-text"></i
-          ></a>
-          <a
-            class="mr-2 transition duration-500 ease-in-out hover:text-gray-900"
-            href="#"
-            title="email"
-            ><i class="fas fa-comments-alt"></i
-          ></a>
-          <a
-            class="mr-2 transition duration-500 ease-in-out hover:text-gray-900"
-            href="#"
-            title="email"
-            ><i class="fas fa-check-circle"></i
-          ></a>
-          <a
-            class="mr-2 transition duration-500 ease-in-out hover:text-gray-900"
-            href="#"
-            title="email"
-            ><i class="fas fa-calendar-exclamation"></i
-          ></a>
+            class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+            href="#pablo"
+            >Dashboard</a
+          >
+          <!-- <form
+            class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
+          >
+            <div class="relative flex w-full flex-wrap items-stretch">
+              <span
+                class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+                ><i class="fas fa-search"></i></span
+              ><input
+                type="text"
+                placeholder="Search here..."
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10"
+              />
+            </div>
+          </form> -->
+          <ul
+            class="flex-col md:flex-row list-none items-center hidden md:flex"
+          >
+            <a class="text-blueGray-500 block" href="#user">
+              <div class="items-center flex">
+                <span
+                  class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+                  ><img
+                    alt="..."
+                    class="w-full rounded-full align-middle border-none shadow-lg"
+                    src="./assets/person.svg"
+                /></span>
+              </div>
+            </a>
+            <div
+              class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+            >
+              <a
+                href="#pablo"
+                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                >Action</a
+              ><a
+                href="#pablo"
+                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                >Another action</a
+              ><a
+                href="#pablo"
+                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                >Something else here</a
+              >
+              <div
+                class="h-0 my-2 border border-solid border-blueGray-100"
+              ></div>
+              <a
+                href="#pablo"
+                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                >Seprated link</a
+              >
+            </div>
+          </ul>
         </div>
-      </nav>
-    </header>
-
-    <main class="h-screen flex flex-row flex-wrap">
-      <aside
-        id="sideBar"
-        class="relative flex flex-col flex-wrap bg-white border-r border-gray-300 p-6 flex-none w-64 md:-ml-64 md:fixed md:top-0 md:z-30 md:h-screen md:shadow-xl animated faster"
-      >
-        <div class="flex flex-col">
-          <div class="text-right hidden md:block mb-4">
-            <button id="sideBarHideBtn">
-              <i class="fas fa-times-circle"></i>
-            </button>
+      </header>
+      <div class="relative bg-blueGray-800 md:pt-32 pb-32 pt-12">
+        <div class="px-4 md:px-10 mx-auto w-full">
+          <div>
+            <div class="flex flex-wrap">
+              <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                <div
+                  class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                >
+                  <div class="flex-auto p-4">
+                    <div class="flex flex-wrap">
+                      <div
+                        class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                      >
+                        <h5
+                          class="text-blueGray-400 uppercase font-bold text-xs"
+                        >
+                          Receita Total
+                        </h5>
+                        <span
+                          class="font-semibold text-xl text-emerald-500"
+                          id="totalIncome"
+                          >R$ 5.897,00</span
+                        >
+                      </div>
+                      <div class="relative w-auto pl-4 flex-initial">
+                        <div
+                          class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-emerald-500"
+                        >
+                          <i class="fas fa-arrow-up"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                <div
+                  class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                >
+                  <div class="flex-auto p-4">
+                    <div class="flex flex-wrap">
+                      <div
+                        class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                      >
+                        <h5
+                          class="text-blueGray-400 uppercase font-bold text-xs"
+                        >
+                          Despesas Totais
+                        </h5>
+                        <span
+                          class="font-semibold text-xl text-red-500"
+                          id="totalExpenses"
+                          >R$ 2.356,00</span
+                        >
+                      </div>
+                      <div class="relative w-auto pl-4 flex-initial">
+                        <div
+                          class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500"
+                        >
+                          <i class="fas fa-arrow-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                <div
+                  class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                >
+                  <div class="flex-auto p-4">
+                    <div class="flex flex-wrap">
+                      <div
+                        class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                      >
+                        <h5
+                          class="text-blueGray-400 uppercase font-bold text-xs"
+                        >
+                          Saldo Atual
+                        </h5>
+                        <span
+                          class="font-semibold text-xl text-primary"
+                          id="balance"
+                          >R$ 3.541,00</span
+                        >
+                      </div>
+                      <div class="relative w-auto pl-4 flex-initial">
+                        <div
+                          class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-primary"
+                        >
+                          <i class="fas fa-wallet"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                <div
+                  class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+                >
+                  <div class="flex-auto p-4">
+                    <div class="flex flex-wrap">
+                      <div
+                        class="relative w-full pr-4 max-w-full flex-grow flex-1"
+                      >
+                        <h5
+                          class="text-blueGray-400 uppercase font-bold text-xs"
+                        >
+                          Categorias
+                        </h5>
+                        <span
+                          class="font-semibold text-xl text-blueGray-700"
+                          id="categoriesCount"
+                          >8</span
+                        >
+                      </div>
+                      <div class="relative w-auto pl-4 flex-initial">
+                        <div
+                          class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-purple-500"
+                        >
+                          <i class="fas fa-tags"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">
-            homes
-          </p>
-          <a
-            href="./index.html"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-chart-pie text-xs mr-2"></i>
-            Analytics dashboard
-          </a>
-          <a
-            href="./index-1.html"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-shopping-cart text-xs mr-2"></i>
-            ecommerce dashboard
-          </a>
-          <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">
-            apps
-          </p>
-          <a
-            href="./email.html"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-envelope-open-text text-xs mr-2"></i>
-            email
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-comments text-xs mr-2"></i>
-            chat
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-shield-check text-xs mr-2"></i>
-            todo
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-calendar-edit text-xs mr-2"></i>
-            calendar
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-file-invoice-dollar text-xs mr-2"></i>
-            invoice
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-folder-open text-xs mr-2"></i>
-            file manager
-          </a>
-          <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">
-            UI Elements
-          </p>
-          <a
-            href="./typography.html"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-text text-xs mr-2"></i>
-            typography
-          </a>
-          <a
-            href="./alert.html"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-whistle text-xs mr-2"></i>
-            alerts
-          </a>
-          <a
-            href="./buttons.html"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-cricket text-xs mr-2"></i>
-            buttons
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-box-open text-xs mr-2"></i>
-            Content
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-swatchbook text-xs mr-2"></i>
-            colors
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-atom-alt text-xs mr-2"></i>
-            icons
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-club text-xs mr-2"></i>
-            card
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-cheese-swiss text-xs mr-2"></i>
-            Widgets
-          </a>
-          <a
-            href="#"
-            class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500"
-          >
-            <i class="fas fa-computer-classic text-xs mr-2"></i>
-            Components
-          </a>
         </div>
-      </aside>
-
-      <section class="bg-gray-100 flex-1 p-6 md:mt-16">
-        @include('./index/generalReport.html')
-        @include('./index/analytics-1.html')
-        @include('./index/salesOverview.html') @include('./index/numbers.html')
-        @include('./index/quickInfo.html')
-      </section>
+      </div>
+      <div class="px-4 md:px-10 mx-auto w-full -m-24">
+        <div class="flex flex-wrap">
+          <!-- Removed the xl:w-8/12 and xl:w-4/12 chart sections -->
+        </div>
+        <div class="flex flex-wrap mt-4">
+          <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+            <div
+              class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+            >
+              <div class="rounded-t mb-0 px-4 py-3 border-0">
+                <div class="flex flex-wrap items-center">
+                  <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                    <h3 class="font-semibold text-base text-blueGray-700">
+                      Últimas Transações
+                    </h3>
+                  </div>
+                  <div
+                    class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
+                  >
+                    <!-- <button
+                      data-modal-target="filterTransactionsModal"
+                      class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+                      type="button"
+                    >
+                      Filtrar
+                    </button> -->
+                    <button
+                      data-modal-target="addTransactionModal"
+                      class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+                      type="button"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="block w-full overflow-x-auto">
+                <table
+                  class="items-center w-full bg-transparent border-collapse"
+                  id="transactionsTable"
+                >
+                  <thead>
+                    <tr>
+                      <th
+                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                      >
+                        Descrição
+                      </th>
+                      <th
+                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                      >
+                        Valor
+                      </th>
+                      <th
+                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                      >
+                        Categoria
+                      </th>
+                      <th
+                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                      >
+                        Data
+                      </th>
+                      <th
+                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                      >
+                        Ações
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
+                      >
+                        Compras de supermercado
+                      </td>
+                      <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                      >
+                        <span class="text-red-500">-R$ 253,50</span>
+                      </td>
+                      <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                      >
+                        Comida
+                      </td>
+                      <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                      >
+                        20/03/2024
+                      </td>
+                      <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                      >
+                        <button
+                          data-modal-target="editTransactionModal"
+                          data-resource-type="transaction"
+                          data-resource-id="123"
+                          class="text-indigo-500 hover:text-indigo-700 mr-2"
+                        >
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button
+                          data-delete-handler
+                          data-resource-type="transaction"
+                          data-resource-id="123"
+                          class="text-red-500 hover:text-red-700"
+                        >
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="w-full xl:w-4/12 px-4">
+            <div
+              class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+            >
+              <div class="rounded-t mb-0 px-4 py-3 border-0">
+                <div class="flex flex-wrap items-center">
+                  <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                    <h3 class="font-semibold text-base text-blueGray-700">
+                      Categorias
+                    </h3>
+                  </div>
+                  <div
+                    class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
+                  >
+                    <button
+                      data-modal-target="addCategoryModal"
+                      class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+                      type="button"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="block w-full overflow-x-auto">
+                <table
+                  class="items-center w-full bg-transparent border-collapse"
+                  id="categoriesTable"
+                >
+                  <thead class="thead-light">
+                    <tr>
+                      <th
+                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                      >
+                        Categoria
+                      </th>
+                      <th
+                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                      >
+                        Ações
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
+                      >
+                        Comida
+                      </td>
+                      <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                      >
+                        <button
+                          data-modal-target="editCategoryModal"
+                          data-category-id="456"
+                          class="text-indigo-500 hover:text-indigo-700 mr-2"
+                        >
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button
+                          data-delete-handler
+                          data-resource-type="category"
+                          data-resource-id="456"
+                          class="text-red-500 hover:text-red-700"
+                        >
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="block py-4">
+          <div class="container mx-auto px-4">
+            <hr class="mb-4 border-b-1 border-blueGray-200" />
+            <div
+              class="flex flex-wrap items-center md:justify-between justify-center"
+            >
+              <div class="w-full md:w-4/12 px-4">
+                <div
+                  class="text-sm text-blueGray-500 font-semibold py-1 text-center md:text-left"
+                >
+                  Todos os direitos reservados ©
+                  <span class="text-blueGray-500">2024</span>
+                  <a
+                    href="#"
+                    class="text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1"
+                    >MyBalance</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </main>
+    <!-- Modal Container -->
+    <dialog
+      id="modalContainer"
+      class="fixed inset-0 z-[9999] hidden h-screen w-screen place-items-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300"
+    >
+      <!-- Add Transaction Modal -->
+      <div
+        id="addTransactionModal"
+        class="modal-content hidden relative m-0 md:m-4 p-4 w-full md:w-2/5 min-w-[280px] md:min-w-[40%] max-w-[100%] md:max-w-[40%] rounded-lg bg-white shadow-2xl overflow-y-auto max-h-[100vh] md:max-h-[90vh]"
+      >
+        <div
+          class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800"
+        >
+          Adicionar Transação
+        </div>
+        <div class="relative border-t border-slate-200 py-4">
+          <form id="addTransactionForm" class="space-y-4">
+            <div class="form-group">
+              <label
+                for="description"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Descrição <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="text"
+                id="description"
+                name="description"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="description"
+              ></span>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="js/scripts.js"></script>
+            <div class="form-group">
+              <label
+                for="amount"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Valor <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                step="0.01"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="amount"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="category"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Categoria</label
+              >
+              <select
+                id="filterCategorySelect"
+                name="category"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              >
+                <!-- options will be populated dynamically -->
+              </select>
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="category"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="date"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Data <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="text"
+                id="date"
+                name="date"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="date"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="type"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Tipo <strong class="text-red-500">*</strong></label
+              >
+              <select
+                id="type"
+                name="type"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              >
+                <option value="income">Receita</option>
+                <option value="expense">Despesa</option>
+              </select>
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="type"
+              ></span>
+            </div>
+
+            <!-- General error message -->
+            <span
+              class="text-red-500 text-sm block mt-2 hidden"
+              data-error="general"
+            ></span>
+          </form>
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+          <button
+            data-modal-close
+            class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100"
+            type="button"
+          >
+            Cancelar
+          </button>
+          <button
+            class="rounded-md bg-primary py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-primary/80 ml-2"
+            type="submit"
+            form="addTransactionForm"
+          >
+            Salvar Transação
+          </button>
+        </div>
+      </div>
+
+      <!-- Add Category Modal -->
+      <div
+        id="addCategoryModal"
+        class="modal-content hidden relative m-0 md:m-4 p-4 w-full md:w-2/5 min-w-[280px] md:min-w-[40%] max-w-[100%] md:max-w-[40%] rounded-lg bg-white shadow-2xl overflow-y-auto max-h-[100vh] md:max-h-[90vh]"
+      >
+        <div
+          class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800"
+        >
+          Adicionar Categoria
+        </div>
+        <div class="relative border-t border-slate-200 py-4">
+          <form id="addCategoryForm" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Nome <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="text"
+                name="name"
+                required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="name"
+              ></span>
+            </div>
+          </form>
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+          <button
+            data-modal-close
+            class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100"
+            type="button"
+          >
+            Cancelar
+          </button>
+          <button
+            class="rounded-md bg-primary py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-primary/80 ml-2"
+            type="submit"
+            form="addCategoryForm"
+          >
+            Salvar Categoria
+          </button>
+        </div>
+      </div>
+
+      <!-- Edit Transaction Modal -->
+      <div
+        id="editTransactionModal"
+        class="modal-content hidden relative m-0 md:m-4 p-4 w-full md:w-2/5 min-w-[280px] md:min-w-[40%] max-w-[100%] md:max-w-[40%] rounded-lg bg-white shadow-2xl overflow-y-auto max-h-[100vh] md:max-h-[90vh]"
+      >
+        <div
+          class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800"
+        >
+          Editar Transação
+        </div>
+        <div class="relative border-t border-slate-200 py-4">
+          <form id="editTransactionForm" class="space-y-4">
+            <input type="hidden" name="id" id="editTransactionId" />
+            <div class="form-group">
+              <label
+                for="editDescription"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Descrição <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="text"
+                id="editDescription"
+                name="description"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="description"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="editAmount"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Valor <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="number"
+                id="editAmount"
+                name="amount"
+                step="0.01"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="amount"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="editCategory"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Categoria</label
+              >
+              <select
+                id="editCategory"
+                name="category"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              >
+                <!-- options will be populated dynamically -->
+              </select>
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="category"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="editDate"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Data <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="text"
+                id="editDate"
+                name="date"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="date"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="editType"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Tipo <strong class="text-red-500">*</strong></label
+              >
+              <select
+                id="editType"
+                name="type"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              >
+                <option value="income">Receita</option>
+                <option value="expense">Despesa</option>
+              </select>
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="type"
+              ></span>
+            </div>
+
+            <span
+              class="text-red-500 text-sm block mt-2 hidden"
+              data-error="general"
+            ></span>
+          </form>
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+          <button
+            data-modal-close
+            class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100"
+            type="button"
+          >
+            Cancelar
+          </button>
+          <button
+            class="rounded-md bg-primary py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-primary/80 ml-2"
+            type="submit"
+            form="editTransactionForm"
+          >
+            Atualizar Transação
+          </button>
+        </div>
+      </div>
+
+      <!-- Edit Category Modal -->
+      <div
+        id="editCategoryModal"
+        class="modal-content hidden relative m-0 md:m-4 p-4 w-full md:w-2/5 min-w-[280px] md:min-w-[40%] max-w-[100%] md:max-w-[40%] rounded-lg bg-white shadow-2xl overflow-y-auto max-h-[100vh] md:max-h-[90vh]"
+      >
+        <div
+          class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800"
+        >
+          Editar Categoria
+        </div>
+        <div class="relative border-t border-slate-200 py-4">
+          <form id="editCategoryForm" class="space-y-4">
+            <input type="hidden" name="id" id="editCategoryId" />
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Nome <strong class="text-red-500">*</strong></label
+              >
+              <input
+                type="text"
+                id="editCategoryName"
+                name="name"
+                required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+              />
+              <span
+                class="text-red-500 text-xs mt-1 hidden"
+                data-error="name"
+              ></span>
+            </div>
+            <span
+              class="text-red-500 text-sm block mt-2 hidden"
+              data-error="general"
+            ></span>
+          </form>
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+          <button
+            data-modal-close
+            class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100"
+            type="button"
+          >
+            Cancelar
+          </button>
+          <button
+            class="rounded-md bg-primary py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-primary/80 ml-2"
+            type="submit"
+            form="editCategoryForm"
+          >
+            Atualizar Categoria
+          </button>
+        </div>
+      </div>
+
+      <!-- Delete Confirmation Modal -->
+      <div
+        id="deleteConfirmationModal"
+        class="modal-content hidden relative m-0 md:m-4 p-4 w-full md:w-2/5 min-w-[280px] md:min-w-[40%] max-w-[100%] md:max-w-[40%] rounded-lg bg-white shadow-2xl overflow-y-auto max-h-[100vh] md:max-h-[90vh]"
+      >
+        <div
+          class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800"
+        >
+          Confirmar Exclusão
+        </div>
+        <div class="relative border-t border-slate-200 py-4">
+          <p class="text-gray-700">
+            Tem certeza que deseja excluir este item? Esta ação não pode ser
+            desfeita.
+          </p>
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+          <button
+            data-modal-close
+            class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100"
+            type="button"
+          >
+            Cancelar
+          </button>
+          <button
+            id="confirmDeleteButton"
+            class="rounded-md bg-red-500 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-red-600 ml-2"
+            type="button"
+          >
+            Excluir
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Transactions Modal -->
+      <!-- <div
+        id="filterTransactionsModal"
+        class="modal-content hidden relative m-4 p-4 w-full md:w-2/5 min-w-[280px] md:min-w-[40%] max-w-[95%] md:max-w-[40%] rounded-lg bg-white shadow-2xl overflow-y-auto max-h-[90vh]"
+      >
+        <div
+          class="flex shrink-0 items-center pb-4 text-xl font-medium text-slate-800"
+        >
+          Filtrar Transações
+        </div>
+        <div class="relative border-t border-slate-200 py-4">
+          <form id="filterTransactionsForm" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Período</label
+              >
+              <div class="grid grid-cols-2 gap-4">
+                <input
+                  type="date"
+                  name="startDate"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                />
+                <input
+                  type="date"
+                  name="endDate"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Tipo</label
+              >
+              <select
+                name="type"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              >
+                <option value="">Todos</option>
+                <option value="expense">Despesa</option>
+                <option value="income">Receita</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Categoria</label
+              >
+              <select
+                name="category"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+              >
+                <option value="">Todas as Categorias</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center pt-4 justify-end">
+          <button
+            data-modal-close
+            class="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-slate-100"
+            type="button"
+          >
+            Cancelar
+          </button>
+          <button
+            class="rounded-md bg-primary py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg hover:bg-primary/80 ml-2"
+            type="submit"
+            form="filterTransactionsForm"
+          >
+            Aplicar Filtros
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Other modals can be added here -->
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
+    <script src="https://unpkg.com/imask"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="./assets/js/imask-config.js"></script>
+    <script
+      type="text/javascript"
+      src="./assets/js/load-initial-data.js"
+    ></script>
+    <script type="text/javascript" src="./assets/js/modals.js"></script>
+    <script type="text/javascript" src="./assets/js/forms.js"></script>
+    <script type="text/javascript" src="./assets/js/delete-handler.js"></script>
+    <script
+      type="text/javascript"
+      src="./assets/js/add-modal-handler.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./assets/js/edit-modal-handler.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./assets/js/balance-service.js"
+    ></script>
+    <script type="text/javascript" src="./assets/js/balance-chart.js"></script>
   </body>
 </html>
